@@ -1,0 +1,7 @@
+<div class="product-index">
+  <app-productdetails
+    class="product-container"
+    *ngFor="let product of products | async"
+    [product]="product"
+  ></app-productdetails>
+</div>

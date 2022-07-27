@@ -1,0 +1,23 @@
+<div class="cart-container">
+  <div *ngFor="let products of product | async" class="cart-item-details">
+    <form (ngSubmit)="onsubmit(products)">
+      <img src="{{ products.url }}" />
+      <h1>{{ products.name }}</h1>
+      <p>${{ products.price }}</p>
+      <p>quantity</p>
+      <input
+        type="number"
+        value="{{ products.quantity }}"
+        class="number-input"
+        [min]="1"
+        name="quantity"
+        [(ngModel)]="products.quantity"
+        (ngModelChange)="modifycart(products)"
+      />
+      <br />
+      <button type="submit">Remove from the cart</button>
+    </form>
+  </div>
+  <p>Total: ${{ totalprice }}</p>
+  <app-form class="form-margin" [total]="totalprice"></app-form>
+</div>

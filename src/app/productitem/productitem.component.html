@@ -1,0 +1,21 @@
+<form class="detail-container" (ngSubmit)="onsubmit()">
+  <img src="{{ productdisplayed.url }}" />
+  <div class="detail-item">
+    <h1>{{ productdisplayed.name }}</h1>
+    <p>${{ productdisplayed.price }}</p>
+    <p>{{ productdisplayed.description }}</p>
+    <input
+      type="number"
+      min="0"
+      value="{{ productdisplayed.quantity }}"
+      [(ngModel)]="quantity"
+      name="quantity"
+      class="select-input"
+    />
+    <br />
+    <a routerLink="/" class="back-link">&#8592; Back to product list</a>
+    <br />
+    <br />
+    <button type="submit">Add to cart</button>
+  </div>
+</form>
